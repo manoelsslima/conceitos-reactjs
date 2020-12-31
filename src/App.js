@@ -10,7 +10,7 @@ function App() {
     api.get('repositories').then(response => {
       setRepositories(response.data);
     })
-  }, []);
+  }, []); // em caso de loop, precisa acrescentar o array de dependências []
 
   async function handleAddRepository() {
     const response = await api.post('repositories', {
